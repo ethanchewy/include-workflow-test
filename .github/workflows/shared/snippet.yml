@@ -1,0 +1,2 @@
+- run: echo "This step is shared!"
+- uses: actions/humans.txt@main
