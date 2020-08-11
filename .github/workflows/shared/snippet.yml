@@ -1,4 +1,4 @@
     - run: echo "This step is shared!"
-      bash: shell
+      shell: bash
 # not yet supported      
 #    - uses: actions/humans.txt@main
