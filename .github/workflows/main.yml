@@ -11,14 +11,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
+    # Use workflow snippet
     - uses: cschleiden/include-workflow@9febb7ea07ee1cac32c6a7dfdd919692c40ced61
       with:
         workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
-      id: wrap
-    - run: less $GITHUB_WORKSPACE/included/action.yml
-    - run: echo ${{ steps.wrap.outputs.workflow-uses }} 
+    # Until composite actions support `uses`, we have to run the generated action here
     - uses: ./included
