@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - uses: cschleiden/include-workflow@0a50f0e7d32553e00efd89aa89b76bddfa619d6e
+    - uses: cschleiden/include-workflow@ebf21c7f960b72e55fe8c8dff713ddeb88fccc25
       with:
         workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
     - run: less $GITHUB_WORKSPACE/included/action.yml
