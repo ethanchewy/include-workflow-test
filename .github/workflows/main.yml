@@ -19,3 +19,4 @@ jobs:
       with:
         workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
     - run: ls $GITHUB_WORKSPACE/included/action.yml
+    - uses: ./included
