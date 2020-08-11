@@ -17,5 +17,5 @@ jobs:
     # Runs a single command using the runners shell
     - uses: cschleiden/include-workflow@main
       with:
-        workflow-steps: $GITHUB_WORKSPACE/.github/workflows/shared/snippet.yml
+        workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
     - run: ls $GITHUB_WORKSPACE/included/action.yml
