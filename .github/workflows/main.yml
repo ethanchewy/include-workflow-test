@@ -18,5 +18,5 @@ jobs:
     - uses: cschleiden/include-workflow@0a50f0e7d32553e00efd89aa89b76bddfa619d6e
       with:
         workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
-    - run: ls $GITHUB_WORKSPACE/included/action.yml
+    - run: less $GITHUB_WORKSPACE/included/action.yml
     - uses: ./included
