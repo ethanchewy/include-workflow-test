@@ -22,4 +22,4 @@ jobs:
     - run: less $GITHUB_WORKSPACE/included/action.yml
     - run: echo ${{ steps.wrap.outputs.workflow-uses }} 
     - uses: ./included
-    - uses: ${{ steps.wrap.outputs.workflow-uses }} 
+    - uses: '${{ steps.wrap.outputs.workflow-uses }}'
