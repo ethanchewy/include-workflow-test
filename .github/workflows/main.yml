@@ -1,6 +1,6 @@
 name: Experiment
 
-on: [workflow_dispatch, push]
+on: workflow_dispatch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -11,11 +11,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Use workflow snippet
-    - uses: cschleiden/include-workflow@9febb7ea07ee1cac32c6a7dfdd919692c40ced61
+    # Runs a single command using the runners shell
+    - uses: cschleiden/include-workflow@main
       with:
-        workflow-steps: ${{github.workspace}}/.github/workflows/shared/snippet.yml
-    # Until composite actions support `uses`, we have to run the generated action here
-    - uses: ./included
+        workflow-steps: $GITHUB_WORKSPACE/.github/workflows/shared/snippet.yml
+    - run: ls $GITHUB_WORKSPACE/included/action.yml
