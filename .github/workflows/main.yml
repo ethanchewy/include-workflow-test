@@ -19,3 +19,5 @@ jobs:
       with:
         workflow-steps: $GITHUB_WORKSPACE/.github/workflows/shared/snippet.yml
     - run: ls $GITHUB_WORKSPACE/included/action.yml
+    
+#     trigger
